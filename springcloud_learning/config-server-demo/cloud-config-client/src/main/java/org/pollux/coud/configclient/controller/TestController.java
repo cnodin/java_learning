@@ -16,7 +16,6 @@ public class TestController {
   @Value("${from}")
   private String from;
 
-
   @RequestMapping("/from")
   public String from(){
 
