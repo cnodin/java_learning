@@ -7,16 +7,15 @@ public class BadLockOnInteger implements Runnable {
 
 	public static Integer i = 0;
 
-	public static String lockObj = "";
+	public Integer lockObj = 0;
 
 	static BadLockOnInteger instance = new BadLockOnInteger();
 
 	@Override
 	public void run() {
-		for (int j = 0; j < 20000; j++){
-			synchronized (lockObj){
+		for (int j = 0; j < 200000; j++){
+			synchronized (i){
 				i++;
-				lockObj = String.valueOf(i);
 			}
 		}
 	}
