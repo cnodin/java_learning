@@ -1,7 +1,12 @@
 package org.pollux.java8inaction.ch04;
 
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 public class StreamDemo {
 
@@ -20,7 +25,21 @@ public class StreamDemo {
 	}
 
 	public static void main(String[] args) {
+		/*
+		List<Dish> data = initData();
+		List<String> threeHighCaloricDishNames = data.stream().filter(d -> d.getCalories() > 300)
+							.map(Dish::getName).limit(3).collect(toList());
 
+		threeHighCaloricDishNames.stream()
+						.map(w -> w.split(""))
+						.flatMap(Arrays::stream)
+						.distinct()
+						.collect(toList())
+						.forEach(System.out::println);
+		*/
+
+		Stream.generate(Math::random).limit(5).forEach(System.out::println);
+		//threeHighCaloricDishNames.forEach(System.out::println);
 	}
 
 }
