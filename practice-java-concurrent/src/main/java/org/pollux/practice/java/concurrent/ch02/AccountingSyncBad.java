@@ -3,12 +3,17 @@ package org.pollux.practice.java.concurrent.ch02;
 /**
  * Created by pollux on 9/19/17.
  */
+
 public class AccountingSyncBad implements Runnable {
 
 	static int i = 0;
 
-	public synchronized void increase(){
+	public static synchronized void increase(){
 		i++;
+	}
+
+	public static int getI() {
+		return i;
 	}
 
 

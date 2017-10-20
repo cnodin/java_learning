@@ -1,5 +1,7 @@
 package org.pollux.practice.java.concurrent.ch02;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Created by pollux on 9/19/17.
  */
