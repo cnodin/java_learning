@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.fubon.springboot.starter</groupId>
+    <artifactId>spring-boot-fubon-starter</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>SpringBoot :: Fubon :: Starter</name>
+
+    <description>fubon springboot starter</description>
+    <url>http://code.oa.com/genesis/spring-boot-fubon-starter</url>
+    <inceptionYear>2011-2022</inceptionYear>
+    <organization>
+        <name>FubonCN</name>
+        <url>http://www.fubon.com.cn</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>spockwang</id>
+            <name>spock wang</name>
+            <email>binbin.wang at fubon.com.cn</email>
+            <roles>
+                <role>Project leader</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>spring-boot-fubon-starter-jwt</module>
+        <module>spring-boot-fubon-starter-parent</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+</project>

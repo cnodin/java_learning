@@ -12,7 +12,7 @@ import java.util.List;
  * use function to filter apples
  *
  */
-public class AppleFilter {
+public class B_AppleFilter {
 
 
 	public static void main(String[] args) {
@@ -43,6 +43,7 @@ public class AppleFilter {
 
 		List<Apple> redApples3 = filter(inventory, (Apple apple) -> "red".equals(apple.getColor()));
 		System.out.println(redApples3);
+
 	}
 
 	/**
@@ -95,6 +96,12 @@ public class AppleFilter {
 		return result;
 	}
 
+	/**
+	 * 将条件代码作为参数传递到方法中
+	 * @param inventory
+	 * @param p
+	 * @return
+	 */
 	public static List<Apple> filter(List<Apple> inventory, ApplePredicate p) {
 		List<Apple> result = new ArrayList();
 		for(Apple apple : inventory){
@@ -113,6 +120,14 @@ public class AppleFilter {
 		public Apple(Integer weight, String color){
 			this.weight = weight;
 			this.color = color;
+		}
+
+		public static boolean isGreenApple(Apple apple){
+			return "green".equals(apple.getColor());
+		}
+
+		public static boolean isHeavyApple(Apple apple){
+			return apple.getWeight() > 150;
 		}
 
 		@Override
