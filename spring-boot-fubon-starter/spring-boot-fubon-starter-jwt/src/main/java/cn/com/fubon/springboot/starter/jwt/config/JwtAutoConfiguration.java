@@ -116,6 +116,9 @@ public class JwtAutoConfiguration {
                     .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                     .and()
+                    .authorizeRequests()
+                    .anyRequest().authenticated()
+                    .and()
                     .apply(new JWTConfigurer(tokenProvider, jwtProperties, authenticationManagerBean()));
 
         }
