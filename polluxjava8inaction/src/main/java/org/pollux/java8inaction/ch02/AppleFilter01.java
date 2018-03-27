@@ -37,7 +37,7 @@ public class AppleFilter01 {
 		return result;
 	}
 
-	//req3:根据重量过滤苹果
+	//req2:根据重量过滤苹果
 	public static List<Apple> filterApplesByWeight(List<Apple> inventory, int weight){
 		List<Apple> result = new ArrayList<>();
 		for(Apple apple : inventory){
@@ -49,7 +49,7 @@ public class AppleFilter01 {
 		return result;
 	}
 
-	//req4:合并颜色和重量，通过flag来区分对颜色或重量的查询
+	//req3:合并颜色和重量，通过flag来区分对颜色或重量的查询
 	//调用:filterApples(inventory, "green", 0, true)
 	//		 filterApples(inventory, "", 150, false)
 	public static List<Apple> filterApples(List<Apple> inventory, String color, int weight, boolean flag){

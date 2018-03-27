@@ -1,6 +1,7 @@
 package org.pollux.java8inaction.ch02;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ public class AppleFilter02 {
 		boolean test (Apple apple);
 	}
 
-	public class AppleHeavyWeightPredicate implements ApplePredicate{
+	public static class AppleHeavyWeightPredicate implements ApplePredicate{
 		@Override
 		public boolean test (Apple apple) {
 			return apple.getWeight() > 150;
@@ -40,6 +41,23 @@ public class AppleFilter02 {
 		public boolean test (Apple apple) {
 			return "green".equals(apple.getColor());
 		}
+	}
+
+	public static void main (String[] args) {
+	    List<Apple> inventory = Arrays.asList(new Apple(80, "green"),
+								new Apple(155, "green"),
+								new Apple(120, "red")
+				);
+
+	    List<Apple> heavyApples = filterApples(inventory, new AppleHeavyWeightPredicate());
+		List<Apple> greenApples = filterApples(inventory, new AppleHeavyWeightPredicate());
+
+		List<Apple> redApples = filterApples(inventory, new ApplePredicate() {
+			@Override
+			public boolean test(Apple apple) {
+				return "red".equals(apple.getColor());
+			}
+		});
 	}
 
 

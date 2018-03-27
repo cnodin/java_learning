@@ -18,7 +18,9 @@ import java.io.IOException;
  * Description:
  */
 @Component
-public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
+public class RestAuthenticationEntryPoint
+        extends DefaultAuthenticationFailureHandler
+        implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request,

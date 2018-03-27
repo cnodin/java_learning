@@ -1,7 +1,5 @@
 package org.pollux.java8inaction.mydemo;
 
-import io.vavr.Lazy;
-
 /**
  * Created with IntelliJ IDEA.
  * User: pollux
@@ -14,15 +12,20 @@ public class LazyDemo {
 
 	public static void main (String[] args) {
 
-		Lazy<Double> lazy = Lazy.of(Math::random);
-		System.out.println(lazy.isEvaluated());
+//		Lazy<Double> lazy = Lazy.of(Math::random);
+//		System.out.println(lazy.isEvaluated());
+//
+//		double val1 = lazy.get();
+//		System.out.println(lazy.isEvaluated());
+//
+//		double val2 = lazy.get();
+//		System.out.println("val1:" + val1);
+//		System.out.println("val2:" + val2);
 
-		double val1 = lazy.get();
-		System.out.println(lazy.isEvaluated());
+		long i = 123456789;
+		double d = Double.parseDouble(String.format("%.2f", (double)i / 1000 / 1000));
 
-		double val2 = lazy.get();
-		System.out.println("val1:" + val1);
-		System.out.println("val2:" + val2);
+		System.out.println(d);
 	}
 
 }

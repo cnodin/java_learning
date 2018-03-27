@@ -111,7 +111,7 @@ public class JwtAutoConfiguration {
             }
 
             http.exceptionHandling()
-                    .authenticationEntryPoint(new Http401UnauthorizedEntryPoint())
+//                    .authenticationEntryPoint(new Http401UnauthorizedEntryPoint())
                     .and()
                     .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

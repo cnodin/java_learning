@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.pollux.grpcdemo.helloworld.api";
+option java_outer_classname = "HelloWorld";
+option objc_class_prefix = "HLW";
+//option optimize_for = CODE_SIZE;
+
+service Greeter {
+    rpc SayHello(HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}

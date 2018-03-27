@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: https
+      connection-timeout: 5000
+      read-timeout: 15000
+      config:
+        order: -10
+#      token: 00000000-0000-0000-0000-000000000000
+      ssl:
+        trust-store: classpath:keystore.jks
+        trust-store-password: changeit
+      authentication: APPID
+      app-id:
+        user-id: 925a2861e3e2792432c6b6757d006a84196ddc16e526a5a07f2bd4d54d38d7bf

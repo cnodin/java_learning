@@ -1,0 +1,1 @@
+INSERT INTO USER(username, first_name, last_name) VALUES('flywaytest1', 'Flyway', 'Test1');

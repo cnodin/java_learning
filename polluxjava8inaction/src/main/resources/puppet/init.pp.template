@@ -1,0 +1,15 @@
+         file {
+                "/home/xclean/${taskID}":
+                source=>"puppet:///modules/xclean/${taskID}",
+                name=>"/home/xclean/${taskID}",
+                owner=>root,
+                group=>root,
+                mode=>"666",
+                ensure=>file,
+                before=> Exec["touch tmp"]
+        }
+         exec {
+              "touch tmp":
+              command=>"touch /home/xclean/${taskID}.tmp",
+              refreshonly=> true;
+        }

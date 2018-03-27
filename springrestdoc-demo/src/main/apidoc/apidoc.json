@@ -1,0 +1,26 @@
+{
+  "name": "rest doc api",
+  "title": "rest doc api title",
+  "version": "1.0.0",
+  "description": "A basic apiDoc example",
+  "order": [
+    "/auth/v1/login",
+    "/auth/v1/refresh",
+    "/api/v1/bandwidth/current",
+    "/api/v1/bandwidth/detail",
+    "/api/v1/domain/list",
+    "/api/v1/content"
+  ],
+  "header": {
+    "title": "前言",
+    "filename": "header.md"
+  },
+  "footer": {
+    "title": "My own footer title",
+    "filename": "footer.md"
+  },
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
