@@ -1,0 +1,99 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: osx
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 10.13
+[INFO] os.detected.version.major: 10
+[INFO] os.detected.version.minor: 13
+[INFO] os.detected.classifier: osx-x86_64
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building netty-demo 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:tree (default-cli) @ netty-demo ---
+[INFO] org.pollux.nettydemo:netty-demo:jar:1.0.0-SNAPSHOT
+[INFO] +- io.netty:netty-all:jar:5.0.0.Alpha1:compile
+[INFO] +- io.grpc:grpc-all:jar:1.9.0:compile
+[INFO] |  +- io.grpc:grpc-auth:jar:1.9.0:compile
+[INFO] |  |  \- com.google.auth:google-auth-library-credentials:jar:0.9.0:compile
+[INFO] |  +- io.grpc:grpc-core:jar:1.9.0:compile (version selected from constraint [1.9.0,1.9.0])
+[INFO] |  |  +- com.google.guava:guava:jar:19.0:compile
+[INFO] |  |  +- com.google.errorprone:error_prone_annotations:jar:2.1.2:compile
+[INFO] |  |  +- com.google.code.findbugs:jsr305:jar:3.0.0:compile
+[INFO] |  |  +- com.google.instrumentation:instrumentation-api:jar:0.4.3:compile
+[INFO] |  |  +- io.opencensus:opencensus-api:jar:0.10.0:compile
+[INFO] |  |  \- io.opencensus:opencensus-contrib-grpc-metrics:jar:0.10.0:compile
+[INFO] |  +- io.grpc:grpc-context:jar:1.9.0:compile
+[INFO] |  +- io.grpc:grpc-netty:jar:1.9.0:compile
+[INFO] |  |  +- io.netty:netty-codec-http2:jar:4.1.17.Final:compile (version selected from constraint [4.1.17.Final,4.1.17.Final])
+[INFO] |  |  |  +- io.netty:netty-codec-http:jar:4.1.17.Final:compile
+[INFO] |  |  |  |  \- io.netty:netty-codec:jar:4.1.17.Final:compile
+[INFO] |  |  |  \- io.netty:netty-handler:jar:4.1.17.Final:compile
+[INFO] |  |  |     \- io.netty:netty-buffer:jar:4.1.17.Final:compile
+[INFO] |  |  |        \- io.netty:netty-common:jar:4.1.17.Final:compile
+[INFO] |  |  \- io.netty:netty-handler-proxy:jar:4.1.17.Final:compile
+[INFO] |  |     +- io.netty:netty-transport:jar:4.1.17.Final:compile
+[INFO] |  |     |  \- io.netty:netty-resolver:jar:4.1.17.Final:compile
+[INFO] |  |     \- io.netty:netty-codec-socks:jar:4.1.17.Final:compile
+[INFO] |  +- io.grpc:grpc-okhttp:jar:1.9.0:compile
+[INFO] |  |  +- com.squareup.okhttp:okhttp:jar:2.5.0:compile
+[INFO] |  |  \- com.squareup.okio:okio:jar:1.13.0:compile
+[INFO] |  +- io.grpc:grpc-protobuf:jar:1.9.0:compile
+[INFO] |  |  +- com.google.protobuf:protobuf-java:jar:3.5.1:compile
+[INFO] |  |  +- com.google.protobuf:protobuf-java-util:jar:3.5.1:compile
+[INFO] |  |  |  \- com.google.code.gson:gson:jar:2.8.2:compile
+[INFO] |  |  +- com.google.api.grpc:proto-google-common-protos:jar:1.0.0:compile
+[INFO] |  |  \- io.grpc:grpc-protobuf-lite:jar:1.9.0:compile
+[INFO] |  +- io.grpc:grpc-protobuf-nano:jar:1.9.0:compile
+[INFO] |  |  \- com.google.protobuf.nano:protobuf-javanano:jar:3.0.0-alpha-5:compile
+[INFO] |  +- io.grpc:grpc-stub:jar:1.9.0:compile
+[INFO] |  \- io.grpc:grpc-testing:jar:1.9.0:compile
+[INFO] |     +- junit:junit:jar:4.12:compile
+[INFO] |     |  \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO] |     \- org.mockito:mockito-core:jar:1.10.19:compile
+[INFO] |        \- org.objenesis:objenesis:jar:2.1:runtime
+[INFO] +- org.projectlombok:lombok:jar:1.16.6:provided
+[INFO] +- ch.qos.logback:logback-classic:jar:1.0.13:compile
+[INFO] |  +- ch.qos.logback:logback-core:jar:1.1.11:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] +- org.msgpack:msgpack-core:jar:0.8.16:compile
+[INFO] \- net.devh:grpc-server-spring-boot-starter:jar:1.4.0-RELEASE:compile
+[INFO]    \- net.devh:grpc-server-spring-boot-autoconfigure:jar:1.4.0-RELEASE:compile
+[INFO]       \- org.springframework.cloud:spring-cloud-starter-sleuth:jar:1.3.0.RELEASE:compile
+[INFO]          +- org.springframework.cloud:spring-cloud-starter:jar:1.3.0.RELEASE:compile
+[INFO]          |  +- org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE:compile
+[INFO]          |  |  +- org.springframework.boot:spring-boot:jar:1.5.9.RELEASE:compile
+[INFO]          |  |  +- org.springframework.boot:spring-boot-autoconfigure:jar:1.5.9.RELEASE:compile
+[INFO]          |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE:compile
+[INFO]          |  |  |  +- org.slf4j:jcl-over-slf4j:jar:1.7.25:compile
+[INFO]          |  |  |  +- org.slf4j:jul-to-slf4j:jar:1.7.25:compile
+[INFO]          |  |  |  \- org.slf4j:log4j-over-slf4j:jar:1.7.25:compile
+[INFO]          |  |  +- org.springframework:spring-core:jar:4.3.13.RELEASE:compile
+[INFO]          |  |  \- org.yaml:snakeyaml:jar:1.17:runtime
+[INFO]          |  +- org.springframework.cloud:spring-cloud-context:jar:1.3.0.RELEASE:compile
+[INFO]          |  |  \- org.springframework.security:spring-security-crypto:jar:4.2.3.RELEASE:compile
+[INFO]          |  +- org.springframework.cloud:spring-cloud-commons:jar:1.3.0.RELEASE:compile
+[INFO]          |  |  \- org.apache.httpcomponents:httpclient:jar:4.5.3:compile
+[INFO]          |  |     +- org.apache.httpcomponents:httpcore:jar:4.4.8:compile
+[INFO]          |  |     \- commons-codec:commons-codec:jar:1.10:compile
+[INFO]          |  \- org.springframework.security:spring-security-rsa:jar:1.0.3.RELEASE:compile
+[INFO]          |     \- org.bouncycastle:bcpkix-jdk15on:jar:1.55:compile
+[INFO]          |        \- org.bouncycastle:bcprov-jdk15on:jar:1.55:compile
+[INFO]          +- org.springframework.boot:spring-boot-starter-aop:jar:1.5.9.RELEASE:compile
+[INFO]          |  +- org.springframework:spring-aop:jar:4.3.13.RELEASE:compile
+[INFO]          |  |  \- org.springframework:spring-beans:jar:4.3.13.RELEASE:compile
+[INFO]          |  \- org.aspectj:aspectjweaver:jar:1.8.13:compile
+[INFO]          \- org.springframework.cloud:spring-cloud-sleuth-core:jar:1.3.0.RELEASE:compile
+[INFO]             +- org.springframework:spring-context:jar:4.3.13.RELEASE:compile
+[INFO]             |  \- org.springframework:spring-expression:jar:4.3.13.RELEASE:compile
+[INFO]             \- org.aspectj:aspectjrt:jar:1.8.13:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.327 s
+[INFO] Finished at: 2018-06-11T01:08:45+08:00
+[INFO] Final Memory: 25M/225M
+[INFO] ------------------------------------------------------------------------

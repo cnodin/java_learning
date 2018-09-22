@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ch08.protobuf.subscribe";
+option java_outer_classname = "SubscribeRespProto";
+option objc_class_prefix = "HLW";
+
+message SubscribeResp {
+    int32 subReqID = 1;
+    int32 respCode = 2;
+    string desc = 3;
+}
