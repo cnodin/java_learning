@@ -1,0 +1,19 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: sofademo-app2
+  cloud:
+    consul:
+      enable: true
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        hostname: localhost
+        serviceName: ${spring.application.name}
+        healthCheckPath: /health
+        healthCheckInterval: 15s
+        tags: urlprefix-/${spring.application.name}
+        instanceId: ${spring.application.name}-${random.value}
