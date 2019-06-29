@@ -1,6 +1,18 @@
 server:
   port: 8181
 
+logging:
+  path: ./logs/app1-service
+
+com:
+  alipay:
+    sofa:
+      boot:
+        skipJvmReferenceHealthCheck: true
+      ark:
+        master:
+          biz: app1
+
 spring:
   application:
     name: sofademo-app1

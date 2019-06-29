@@ -13,7 +13,7 @@
 	</parent>
 	<groupId>org.pollux.sofajarslinkdemo</groupId>
 	<artifactId>sofajarslink-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-RELEASE</version>
 	<name>sofajarslink-demo</name>
 	<description>Demo project for Spring Boot</description>
 
