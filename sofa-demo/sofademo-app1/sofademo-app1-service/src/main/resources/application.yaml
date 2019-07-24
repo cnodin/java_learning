@@ -1,0 +1,42 @@
+server:
+  port: 8181
+
+logging:
+  path: ./logs/app1-service
+
+com:
+  alipay:
+    sofa:
+      boot:
+        skipJvmReferenceHealthCheck: true
+      ark:
+        master:
+          biz: app1
+
+spring:
+  application:
+    name: sofademo-app1
+  cloud:
+    consul:
+      enable: true
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        hostname: localhost
+        serviceName: ${spring.application.name}
+        healthCheckPath: /health
+        healthCheckInterval: 15s
+        tags: urlprefix-/${spring.application.name}
+        instanceId: ${spring.application.name}-${random.value}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有节点
+    health:
+      sensitive: false #关闭过滤敏感信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #显示详细信息

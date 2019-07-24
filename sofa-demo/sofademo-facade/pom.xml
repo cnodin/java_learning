@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sofa-demo</artifactId>
+        <groupId>org.pollux.sofademo</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sofademo-facade</artifactId>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <sofademo.app1.version>0.0.1-SNAPSHOT</sofademo.app1.version>
+        <sofademo.app2.version>0.0.1-SNAPSHOT</sofademo.app2.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.pollux.sofademo</groupId>
+            <artifactId>sofademo-app1-api</artifactId>
+            <version>${sofademo.app1.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.pollux.sofademo</groupId>
+            <artifactId>sofademo-app2-api</artifactId>
+            <version>${sofademo.app2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sofa-demo</artifactId>
+        <groupId>org.pollux.sofademo</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sofademo-app2</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>sofademo-app2-service</module>
+        <module>sofademo-app2-api</module>
+        <module>sofademo-app2-model</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <sofademo.app1.version>0.0.1-SNAPSHOT</sofademo.app1.version>
+        <sofademo.app2.version>0.0.1-SNAPSHOT</sofademo.app2.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.pollux.sofademo</groupId>
+                <artifactId>sofademo-app2-api</artifactId>
+                <version>${sofademo.app2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.pollux.sofademo</groupId>
+                <artifactId>sofademo-app2-model</artifactId>
+                <version>${sofademo.app2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.pollux.sofademo</groupId>
+                <artifactId>sofademo-app1-api</artifactId>
+                <version>${sofademo.app1.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.pollux.sofademo</groupId>
+                <artifactId>sofademo-app1-model</artifactId>
+                <version>${sofademo.app1.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

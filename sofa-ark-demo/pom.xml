@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.pollux.sofa.arkdemo</groupId>
+	<artifactId>sofa-ark-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>sofa-ark-demo</name>
+	<description>sofa ark demos</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<modules>
+		<module>sofa-ark-demo-service-v1</module>
+		<module>sofa-ark-demo-service-v2</module>
+		<module>myjar-v1</module>
+		<module>myjar-v2</module>
+	</modules>
+
+</project>
