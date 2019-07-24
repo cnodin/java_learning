@@ -1,0 +1,157 @@
+# Tomcat
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 500
+        min-spare-threads: 30
+        max-connections: 2000
+        accept-count: 4000
+        accesslog:
+          enabled: true
+          directory: logs
+          prefix: swan-asscess-log
+openApi:
+  content:
+    result:
+      maxPageSize: 1000
+
+# 环境 dev|test|pro
+spring:
+    profiles:
+        active: dev
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+    # jackson时间格式化
+    jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd HH:mm:ss
+    http:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 100MB
+            enabled: true
+    messages:
+      basename: i18n/messages
+      cache-seconds: 3600
+    jpa:
+      show-sql: true
+
+management:
+  context-path: /manage
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: false
+    consul:
+      enabled: false
+    redis:
+      enabled: false
+    mail:
+      enabled: false
+    mongo:
+      enabled: false
+
+jwt:
+  header: Authorization
+  expires_in: 1800 # 5 minutes
+  mobile_expires_in: 1800 # 60 minutes
+  secret: wwylforever
+  cookie: AUTH-TOKEN
+
+logging:
+  level:
+    root: INFO
+  path: ./logs
+#    com:
+#      wwyl: DEBUG
+
+#info:
+#  build:
+#    artifact: @project.artifactId@
+#    name: @project.name@
+#    description: @project.description@
+#    version: @project.version@
+
+#resttemplate超时参数，单位毫秒
+resttemplate:
+  connectionrequesttimeout: 30000
+  connectTimeout: 30000
+  readTimeout: 30000
+
+#log file configs
+flow:
+  log:
+    path: /mnt/mfs/logmerge/userlog
+
+api:
+  client:
+    checksignurl: /v1/ticket/vm/notify
+
+filter:
+  login:
+    ignore_url:
+      - /**/health
+      - /**/auth/login
+      - /v1/ticket/vm/notify/**
+      - /**/log/file/**
+      - /**/open/**
+      - /**/cdn/**
+      - /**/verifycode/**
+      - /**/sslCertTest/**
+
+
+hystrix:
+    command:
+        default:
+            execution:
+                timeout:
+                  enabled: false
+                isolation:
+                    thread:
+                      timeoutInMilliseconds: 60000
+                    strategy: THREAD
+feign:
+  hystrix:
+    enabled: true # 启动 feign 的断路器功能
+
+provider:
+  ribbon:
+    OkToRetryOnAllOperations: true # 允许所有该服务的所有操作都可以重试
+    MaxAutoRetriesNextServer: 1  # 参与重试的服务个数（不包含第一个服务）
+    MaxAutoRetries: 5 # 重试次数（不包含第一次请求）
+    # 这两个属性在单独使用 Ribbon 时，是不生效的，但是使用 Feign 就行
+    ConnectTimeout: 2000   # 连接超时时间
+    ReadTimeout: 3000     # 处理超时时间
+
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+  MaxAutoRetries: 3
+  MaxAutoRetriesNextServer: 3
+
+content:
+  feedback:
+    expire: 300000 #5min，单位ms
+    fetchExpire: 259200000 #72h，单位ms
+
+#ssl file upload store
+sslCertStore:
+    path: /xcloud/data/swan/cert
+
+bandWidth:
+  limit:
+    betweenTime: 2678400000 #31天，单位ms
+    domains: 20 #每次下载域名数量限制
+
+threadPoolExecutor:
+  corePoolSize: 100  #核心线程数
+  maximumPoolSize: 600 #最大线程数
+  keepAliveTime: 5 #非核心线程的闲置超时时间，超过这个时间就会被回收，单位秒
+  countDownLatch:
+    timeout: 5 #等待线程超时限制，单位分钟
+
+vmSnapshot:
+  operateShell:
+    resultQuart: 120000 #2分钟。单位：ms

@@ -1,0 +1,116 @@
+spring:
+    datasource:
+        url: jdbc:mysql://192.168.1.47:3306/swan?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+        username: swanadmin
+        password: xcloud!QAZ2017
+        #连接池的配置信息
+        initialSize: 10
+        minIdle: 10
+        maxActive: 100
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+    redis:
+        host: 192.168.1.46
+        database: 0
+        port: 6379
+        pool:
+          max-active: 1000
+          max-idle: 10
+          min-idle: 5
+        timeout: 10000 #单位毫秒
+        password: wwylforever
+    mail:
+        host: mail.fjsdn.com
+        port: 25
+        username: oss@fjsdn.com
+        password: xcloud2017!QAZ1qaz
+        default-encoding: UTF-8
+  #      to: my.tang@fjsdn.com
+  #      cc: spock.wang@fjsdn.com
+        to: xy.lv@fjsdn.com
+        cc:
+
+
+jpa:
+  hibernate:
+     ddl-auto: update
+     show-sql: true
+
+internal:
+  app:
+    networkresource:
+      url:
+        staticTotal: http://swallow.fjsdn.com/api/cdn/flow/get_total?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        staticDetail: http://swallow.fjsdn.com/api/cdn/flow/get_list?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        dynamicTotal: http://swallow.fjsdn.com/api/una/ng_flow/get_total?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        dynamicDetail: http://swallow.fjsdn.com/api/una/ng_flow/get_total?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        unaTotal: http://swallow.fjsdn.com/api/una/sailfish/get_total?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        unaDetail: http://swallow.fjsdn.com/api/una/sailfish/get_list?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        sctTotal: http://192.168.1.87/api/sct/flow/get_total?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        sctDetail: http://192.168.1.87/api/sct/flow/get_list?domains={0}&from={1}&to={2}&time_granularity={3}&stamp={4}
+        topinfo: http://192.168.1.87/api/cdn/top_url/get_total?domains={0}&from={1}&to={2}&stamp={3}&time_granularity={4}&sort={5}
+        vminfo: http://192.168.1.87/api/vm/netcard/get_{0}?ips={1}&from={2}&to={3}&stamp={4}&time_granularity={5}
+        vmmonitor: http://192.168.1.83:9990/GetItemHistory?monitor-items={0}&ip={1}&from={2}&to={3}&hosttype={4}
+        ipv6: http://logapi-dev.onewocloud.net/woodpecker/v1/cdn/get_ipv6_list?domains={0}&from={1}&to={2}&nonce={3}&stamp={4}&sign={5}&client=peacock
+        ipv6Isp: http://logapi-dev.onewocloud.net/woodpecker/v1/cdn/get_ipv6_isp_list?domains={0}&from={1}&to={2}&nonce={3}&stamp={4}&sign={5}&client=peacock
+    turkey:
+      url:
+        swanTask: http://192.168.1.81/api/post-info/postSwanTask
+    token: EFmvnKIltP5S76c5
+    ipv6:
+      token: HG5u7lueBU5kYAalJrBFIDqJFE2PtVeW
+puppet:
+  repo:
+    path: /Users/pollux/projects/wwyl/phoenix/puppet-dynamic-module
+
+#log file configs
+#/mnt/mfs/logmerge/userlog/username/domainname/
+flow:
+  log:
+    rootpath: /Users/pollux/temp/
+    download:
+      hostname: http://localhost:8081
+
+jwt:
+  header: Authorization
+  expires_in: 1800 # 5 minutes
+  mobile_expires_in: 1800 # 60 minutes
+  secret: wwylforever
+  cookie: AUTH-TOKEN
+
+kiwi:
+  client:
+    token: daCKN3uEHL7ogp3A1RcOvvMSwMxTaVFo
+  send:
+    time: 180000
+
+grpc:
+  client:
+    kiwi:
+      certificates: classpath:kiwi-dev-cert.pem
+      override-authority: kiwi-dev.fjsdn.com
+      token: daCKN3uEHL7ogp3A1RcOvvMSwMxTaVFo
+      timeLater: 180000
+
+vm:
+  operate:
+    shell: /opt/shell/vm/innerproxy.sh
+    snapshot: /opt/shell/vm/snapshot-proxy.sh
+    maxSnapshotCount: 3
+
+zabbix:
+  url: http://hawk.fjsdn.com/zabbix/api_jsonrpc.php
+  username: zbx-api
+  password: wwyl2017#@!
+
+cache:
+  machine:
+  #预取的主机总数
+    amount: 125
