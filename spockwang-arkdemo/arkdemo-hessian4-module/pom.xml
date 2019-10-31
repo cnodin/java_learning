@@ -37,7 +37,7 @@
                             <imported>
                                 <!-- configure class-level imported class -->
                                 <classes>
-                                    <!--<class>org.spockwang.arkdemo.pojo.SamplePoJo</class>-->
+                                    <class>org.spockwang.arkdemo.pojo.SamplePoJo</class>
                                 </classes>
                             </imported>
 

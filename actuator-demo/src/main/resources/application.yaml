@@ -1,0 +1,13 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: actuator-demo-prometheus
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "prometheus"
+  metrics:
+    tags:
+      application: ${spring.application.name}

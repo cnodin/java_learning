@@ -35,13 +35,13 @@
 		<dependency>
 			<groupId>org.pollux.sofa.ark.demo.service</groupId>
 			<artifactId>sofa-ark-demo-service-v1</artifactId>
-			<classifier>ark.plugin</classifier>
+			<classifier>ark-plugin</classifier>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.pollux.sofa.ark.demo.service</groupId>
 			<artifactId>sofa-ark-demo-service-v2</artifactId>
-			<classifier>ark.plugin</classifier>
+			<classifier>ark-plugin</classifier>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

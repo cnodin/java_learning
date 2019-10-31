@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.net.URL;
 
 @SpringBootApplication
 @RestController
@@ -35,6 +36,7 @@ public class ArkUserpluginDemoApplication {
         byte[] bytes = hessian4Service.serialize(samplePoJo);
         Object pojo = hessian4Service.deserialize(bytes);
         hessian4Service.test();
+
         return pojo.toString();
         }catch (Exception e) {
             e.printStackTrace();

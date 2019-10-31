@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.21.RELEASE</version>
+		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.pollux.sofa.ark.demo.service</groupId>
-	<artifactId>sofa-ark-demo-service-v2</artifactId>
+	<groupId>org.pollux.actuatordemo</groupId>
+	<artifactId>actuator-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sofa-ark-demo-service</name>
-	<description>sofa ark demo service</description>
+	<name>demo</name>
+	<description>actuator demo project for Spring Boot, use prometheus</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -24,13 +24,12 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.pollux.sofa.arkdemo</groupId>
-			<artifactId>myjar</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -47,29 +46,9 @@
 
 	<build>
 		<plugins>
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--			</plugin>-->
 			<plugin>
-				<groupId>com.alipay.sofa</groupId>
-				<artifactId>sofa-ark-plugin-maven-plugin</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
-				<executions>
-					<execution>
-						<id>default-cli</id>
-						<goals>
-							<goal>ark-plugin</goal>
-						</goals>
-						<configuration>
-							<exported>
-								<classes>
-									<class>org.pollux.sofa.ark.demo.service.controller.ServiceAv1</class>
-								</classes>
-							</exported>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
